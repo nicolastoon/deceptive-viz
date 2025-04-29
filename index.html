@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Project 2 Report</title>
+    <title>Persuasive? Or Deceptive?</title>
     <style>
       :root {
         --color-neutral-95: hsl(220 10% 95%);
@@ -144,7 +144,7 @@
   <body>
     <header>
       <h1>
-        <small>Assignment 4</small>
+        <small>Project 2</small>
         Persuasive or Deceptive Visualization?
       </h1>
 
@@ -152,7 +152,7 @@
     </header>
 
     <main>
-      <h2>Proposition: Which borough of New York City has the worst officers, according to complaints dating from 1985 to 2020?</h2>
+      <h2>Proposition: Which borough of New York City has the worst officers?</h2>
 
       <section>
         <h3>FOR the Proposition</h3>
@@ -165,9 +165,23 @@
         <p>Design Decisions and Rationale:</p>
 
         <ul>
-          <li>RATIONALE_1</li>
-          <li>RATIONALE_2</li>
-          <li>RATIONALE_3</li>
+            <li><b>Choosing high-complaint officers per precinct as a metric (2):</b> I chose to use the number of officers with 3+ substantiated complaints per precinct as a metric. 
+                While this measure may not be immediately intuitive to all audiences, it provides a strong representation of officer misconduct. 
+                I considered using the count of officers with 5+ complaints regardless of outcome, but ultimately decided that the current metric would be better.
+                Since we are measuring substantiated complaints instead of just normal complaints, we are able to filter out officers who have received "petty" complaints. 
+            </li>
+            <li><b>Using a discretized sequential color scale (2):</b> I used a sequential color scale because readers would intuitively interpret darker colors as worse outcomes. 
+                I also considered using a standard discretized color scale that increased the shade of the color linearly, but I decided to make the darkest color a bit darker than it normally would.
+                This change will push readers to remember the boroughs with the highest values better.
+            </li>
+            <li><b>Adding an annotation to further highlight message (2):</b> The annotation is useful to put the colors into context. 
+                Since the color scale is discretized, it is hard to compare boroughs with each other. 
+                However, the text annotation draws attention and reinforces the message for the reader.
+            </li>
+            <li><b>Purposefully creating large bins to mimic large variation (-1):</b> The bins in the discretized colorscale are rather large, compared to the variance in the data points. 
+                For example, Staten Island, Manhattan, and Queens are all within the same bin with width 6, even though their numerical values are in very close proximity of each other. 
+                While the granularity of the visualization is reduced, I wanted to emphasize the gap between the Bronx and other boroughs.
+            </li>
         </ul>
       </section>
 
@@ -182,16 +196,50 @@
         <p>Design Decisions and Rationale:</p>
 
         <ul>
-          <li>Using hotter colors for greater magnitude extremes (2): This design choice in color is super important because it gets the reader to remember the colors that stand out to them. Since one of the boroughs is a color that stands out compared to the rest, they are more likely to remember that borough over the others.</li>
-          <li>Using a diverging color scale (1): This decision is persuasive because it makes the boroughs on the extremes a very different colors. However, I would say that this design decision is not completely persuasive since the median doesn't really stand for anything, but a diverging color scale implies that the median does hold some sort of "neutral" value.</li>
-          <li>Choosing total number of complaints as the metric (0.5): At first glance, this metric seems pretty appropriate for the question. More complaints = worse police officers. However, the metric does fail to account for the number of police officers in each borough. The number of complaints will naturally be higher in areas where there are more police officers.</li>
+            <li><b>Using diverging to differentiate between extremes (2):</b> The cooler colors represented smaller values, and hotter numbers represented greater values. 
+                Since the human eye gravitates towards warmer colors, they are more likely to remember that Brooklyn has the greatest number of complaints, which is the message of this visualization. 
+                I decided that a diverging scale was more pleasant on the eye compared to a sequential scale, where all the colors are the very similar.
+            </li>
+            <li><b>Using a continuous color scale (1):</b> In this visualization, none of the boroughs have values that are particularly close, which makes the continuous color scale good because it helps the audience visualize how far apart each borough is from each other.
+                You can see that Queens, Manhattan, and the Bronx are all close to each other on the color scale, while Staten Island and Brooklyn are on opposite sides. 
+                I was thinking about using a discretized scale, but decided that I wanted the audience to differentiate between each borough, not just the borough with the most complaints.
+            </li>
+            <li><b>Choosing total number of complaints as the metric (-2):</b> At first glance, this metric seems pretty appropriate for the question. 
+                More complaints generally equals worse police officers. 
+                However, the metric does fail to account for the number of police officers in each borough since the number of complaints will naturally be higher in areas where there are more police officers. 
+                There were other metrics that I tested out, like the proportion of complaints to precincts in each borough, but I decided to use the current metric because its results were more pronounced and is deceptive to the untrained eye.
+            </li>
         </ul>
       </section>
 
       <section>
         <h2>Final Reflection</h2>
 
-        <p>[WRITE FINAL REFLECTION PARAGRAPHS HERE.]</p>
+        <p>
+            One thing that I found easy in this project was executing the design choice that I intuitively wanted to do and believed to the best. 
+            However, when it was time to create an opposing visualization, I found it difficult to go against my intuition and choose different design choice that communicated other ideas.
+            For example, when manually making annotations or tweaking the colorscale so it was darker for certain regions, it went against my values to emphasize certain parts. 
+            If the data is actually significant, it should be easy to let the data speak for itself.
+
+            Something I found surprisng was being able to differentiate persuasive and deceptive design decisions. 
+            The line between these is very blurry since one design choice might be persuasive in one visualization, but when applied to another visualization, loses it's value and instead hurts the message.
+            For example, using a discretized vs continuous color scale was one design choice that I struggled to differentiate. 
+            In visualizations where the data isn't very closely packed, continuous color scales allow for the reader to grasp at the variance between the data. 
+            Whereas in visualizations where the data is closely packed, continuous color scales fall into the hole of that "just noticeable difference" and the pattern in the data is uninterpretable.
+        </p>
+        <p>
+            How do you now define “ethical analysis and visualization”? 
+            What bounds (if any) can you draw to distinguish “acceptable” persuasive choices vs. “misleading” ones (and if none, why not)?
+
+            Ethical analysis and visualization is very difficult to achieve in the real world.
+            It is impossible to filter or aggregate data that captures the whole picture. 
+            I believe that ethical visualization can only exist when you have many different visualizations trying to answer the same question.
+            That way, a reader can take in all of the differences and truly think about what is causing these differences.
+
+            When given a single visualization, it should be easy to determine which design choices were good, which would be better, etc. 
+            However, when given many different visualizations, it is impossible to determine which design choices are better than others.
+            Each design choice has its own purpose. It might not suit one visualization, but it might suit another visualization, depending on the message and structure of the visualization.
+        </p>
       </section>
     </main>
   </body>
